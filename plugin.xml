@@ -59,7 +59,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <platform name="android">
         <preference name="ANDROID_FIREBASE_BOM_VERSION" default="33.13.0" />
-
+<framework src="androidx.datastore:datastore-preferences:1.1.0" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
