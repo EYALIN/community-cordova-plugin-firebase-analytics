@@ -1,14 +1,29 @@
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-firebase-analytics"
-      version="8.0.8">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed under MIT License
 
-    <name>FirebaseAnalyticsPlugin</name>
-    <description>Cordova plugin for Firebase Analytics</description>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="community-cordova-plugin-firebase-analytics"
+        version="1.1.0">
+
+    <name>community-cordova-plugin-firebase-analytics</name>
+    <description>Community Cordova plugin for Firebase Analytics</description>
     <license>MIT</license>
-    <keywords>cordova</keywords>
-    <repo>https://github.com/chemerisuk/cordova-plugin-firebase-analytics</repo>
-    <issue>https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues</issue>
+    <keywords>cordova,firebase,analytics,ecosystem:cordova,cordova-android,cordova-ios</keywords>
+    <repo>https://github.com/EYALIN/community-cordova-plugin-firebase-analytics</repo>
+    <issue>https://github.com/EYALIN/community-cordova-plugin-firebase-analytics/issues</issue>
 
     <js-module src="www/FirebaseAnalytics.js" name="FirebaseAnalytics">
         <merges target="cordova.plugins.firebase.analytics" />
@@ -23,8 +38,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <preference name="ANALYTICS_COLLECTION_ENABLED" default="true" />
     <preference name="AUTOMATIC_SCREEN_REPORTING_ENABLED" default="true" />
 
+    <!-- iOS Platform -->
     <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="11.12.0" />
+        <preference name="IOS_FIREBASE_POD_VERSION" default="12.7.0" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -57,9 +73,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </podspec>
     </platform>
 
+    <!-- Android Platform -->
     <platform name="android">
-
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="33.1.2" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="34.7.0" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -71,7 +87,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="config.xml" parent="/*">
             <preference name="AndroidXEnabled" value="true" />
             <preference name="GradlePluginGoogleServicesEnabled" value="true" />
-                   <preference name="GradlePluginGoogleServicesVersion" value="4.4.2" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.4.2" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">

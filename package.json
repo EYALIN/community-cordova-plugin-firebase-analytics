@@ -1,44 +1,40 @@
 {
-  "name": "cordova-plugin-firebase-analytics",
-  "version": "8.0.8",
-  "description": "Cordova plugin for Firebase Analytics",
+  "name": "community-cordova-plugin-firebase-analytics",
+  "version": "1.1.0",
+  "description": "Community Cordova plugin for Firebase Analytics",
+  "main": "./types/index.d.ts",
   "types": "./types/index.d.ts",
   "cordova": {
-    "id": "cordova-plugin-firebase-analytics",
+    "id": "community-cordova-plugin-firebase-analytics",
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-analytics.git"
-  },
-  "author": "Maksim Chemerisuk <chemerisuk@gmail.com> (https://github.com/chemerisuk)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues"
-  },
-  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics#readme",
-  "funding": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics?sponsor=1",
+  "readme": "README.md",
+  "repository": "EYALIN/community-cordova-plugin-firebase-analytics",
+  "homepage": "https://github.com/EYALIN/community-cordova-plugin-firebase-analytics",
+  "funding": "https://github.com/sponsors/EYALIN",
+  "bugs": "https://github.com/EYALIN/community-cordova-plugin-firebase-analytics/issues",
   "keywords": [
     "cordova",
     "firebase",
     "analytics",
+    "google",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
   ],
   "scripts": {
-    "preversion": "npm run docs && rm -rf docs",
-    "version": "perl -i -pe 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add .",
-    "postversion": "git push && git push --tags",
-    "predocs": "tsc www/* --declaration --allowJs --checkJs --lib es2015,dom --emitDeclarationOnly --outDir types",
-    "docs": "typedoc && perl -i -pe 's/README.md#/#/g' ./docs/README.md",
-    "postdocs": "perl -i -0pe 's/(<!-- TypedocGenerated -->).*/$1\n\n/gms' README.md && cat ./docs/README.md >> README.md"
+    "test": "echo \"No tests yet\""
   },
-  "devDependencies": {
-    "typedoc": "^0.23.9",
-    "typedoc-plugin-markdown": "^3.13.4"
+  "author": "EYALIN",
+  "license": "MIT",
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova": ">100"
+      }
+    }
   }
 }
