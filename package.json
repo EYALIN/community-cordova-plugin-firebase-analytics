@@ -1,6 +1,6 @@
 {
   "name": "community-cordova-plugin-firebase-analytics",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Community Cordova plugin for Firebase Analytics",
   "main": "./types/index.d.ts",
   "types": "./types/index.d.ts",
