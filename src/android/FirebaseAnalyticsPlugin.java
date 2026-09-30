@@ -98,11 +98,18 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
                 bundle.putDouble(key, (Double)value);
             } else if (value instanceof Long) {
                 bundle.putLong(key, (Long)value);
+            } else if (value instanceof Boolean) {
+                bundle.putLong(key, ((Boolean)value) ? 1L : 0L);
             } else if (value instanceof JSONArray) {
                 JSONArray jsonArray = (JSONArray)value;
                 ArrayList<Bundle> items = new ArrayList<>();
                 for (int i = 0, n = jsonArray.length(); i < n; i++) {
-                    items.add(parse(jsonArray.getJSONObject(i)));
+                    JSONObject item = jsonArray.optJSONObject(i);
+                    if (item == null) {
+                        Log.w(TAG, "Skipping non-object array entry at index " + i + " for key " + key);
+                        continue;
+                    }
+                    items.add(parse(item));
                 }
                 bundle.putParcelableArrayList(key, items);
             } else {

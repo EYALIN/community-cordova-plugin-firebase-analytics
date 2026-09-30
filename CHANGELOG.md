@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.3] - 2026-09-30
+
+### Fixed
+- `logEvent`/`setDefaultEventParameters` param `parse()` (Android) now handles `Boolean` values by writing them as `putLong(key, 1L/0L)` instead of silently dropping them
+- Array-valued params now use `optJSONObject` and skip (with a logged warning) any array entry that is not a JSON object, instead of throwing and failing the whole event
+
 ## [1.1.0] - 2026-01-18
 
 ### Changed
